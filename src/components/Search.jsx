@@ -4,7 +4,7 @@ import { ItemsContext } from "../context/ItemContext";
 import { NavLink } from "react-router-dom";
 
 const Search = () => {
-  const { items,id } = useContext(ItemsContext);
+  const { items } = useContext(ItemsContext);
 
   const [query, setQuery] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);

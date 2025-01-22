@@ -18,6 +18,11 @@ const CartItem = (props) => {
         setProductDetails(product);
     }, [productId, items.products]);
 
+     
+    let total = productDetails?.price * quantity
+    console.log(total)
+    
+
     const handelMinus = () => {
         dispatch(changeQuantity({
             productId: productId,
@@ -52,7 +57,7 @@ const CartItem = (props) => {
                 <div>
                     <h3 className="text-lg font-bold text-gray-800">{productDetails.title}</h3>
                     <p className="text-sm text-gray-600">{productDetails.category}</p>
-                    <p className="text-sm text-blue-600">Price: ${productDetails.price}</p>
+                    <p className="text-sm text-blue-600">Price: ${productDetails.price * quantity}</p>
                 </div>
             </div>
 

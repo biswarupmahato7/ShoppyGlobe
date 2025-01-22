@@ -12,6 +12,9 @@ import {Provider} from 'react-redux';
 import { store } from "./store/index.js";
 import Cart from "./components/Cart/Cart.jsx";
 import BecomeASeller from "./components/BecomeASeller.jsx";
+import CategoryPage from "./components/category/CategoryPage.jsx";
+import FilterSection from "./components/FilterSection.jsx";
+import OrderConfirm from "./components/Order/OderConfirm.jsx";
 
 
 const appRouter = createBrowserRouter([
@@ -36,6 +39,19 @@ const appRouter = createBrowserRouter([
         path: '/seller',
         element: <BecomeASeller/>
 
+      },
+      {
+        path: '/category/:categoryName',
+        element: (
+          <div>
+            <FilterSection />
+            <CategoryPage />
+          </div>
+        ),
+      },
+      {
+        path: '/orderConfirm',
+        element: <OrderConfirm/>
       }
     ]
   },
